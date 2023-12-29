@@ -1,0 +1,1863 @@
+﻿<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>SAS Output</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+.accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="c body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The NLMIXED Procedure</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Specifications">
+<caption aria-label="Specifications"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Specifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set</th>
+<td class="data">WORK.DADOS_TRAT</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Dependent Variable</th>
+<td class="data">incidencia</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Distribution for Dependent Variable</th>
+<td class="data">General</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Random Effects</th>
+<td class="data">b</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Distribution for Random Effects</th>
+<td class="data">Normal</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Subject Variable</th>
+<td class="data">ramo</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Optimization Technique</th>
+<td class="data">Dual Quasi-Newton</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Integration Method</th>
+<td class="data">Adaptive Gaussian Quadrature</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Dimensions">
+<caption aria-label="Dimensions"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Dimensions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Observations Used</th>
+<td class="r data">540</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Observations Not Used</th>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Total Observations</th>
+<td class="r data">540</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Subjects</th>
+<td class="r data">60</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Subject</th>
+<td class="r data">9</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Parameters</th>
+<td class="r data">9</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Quadrature Points</th>
+<td class="r data">7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Initial Parameters">
+<caption aria-label="Initial Parameters"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="10" scope="colgroup">Initial Parameters</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">beta0</th>
+<th class="r b header" scope="col">beta1</th>
+<th class="r b header" scope="col">gamma2</th>
+<th class="r b header" scope="col">gamma3</th>
+<th class="r b header" scope="col">gamma4</th>
+<th class="r b header" scope="col">gamma5</th>
+<th class="r b header" scope="col">gamma6</th>
+<th class="r b header" scope="col">alpha0</th>
+<th class="r b header" scope="col">sigma</th>
+<th class="r b header" scope="col">Negative<br/>Log<br/>Likelihood</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data" style="white-space: nowrap">-30</td>
+<td class="r data">0.05</td>
+<td class="r data">25</td>
+<td class="r data">25</td>
+<td class="r data">25</td>
+<td class="r data">25</td>
+<td class="r data">25</td>
+<td class="r data" style="white-space: nowrap">-11</td>
+<td class="r data">5</td>
+<td class="r data">385.707872</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX3" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Iteration History">
+<caption aria-label="Iteration History"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Iteration History</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Iteration</th>
+<th class="r b header" scope="col">Calls</th>
+<th class="r b header" scope="col">Negative<br/>Log<br/>Likelihood</th>
+<th class="r b header" scope="col">Difference</th>
+<th class="r b header" scope="col">Maximum<br/>Gradient</th>
+<th class="r b header" scope="col">Slope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">6</td>
+<td class="r data">385.6109</td>
+<td class="r data">0.097021</td>
+<td class="r data">4.64924</td>
+<td class="r data" style="white-space: nowrap">-124.361</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">10</td>
+<td class="r data">379.8721</td>
+<td class="r data">5.738768</td>
+<td class="r data">3.13968</td>
+<td class="r data" style="white-space: nowrap">-16.3901</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">14</td>
+<td class="r data">374.3187</td>
+<td class="r data">5.553358</td>
+<td class="r data">5.02476</td>
+<td class="r data" style="white-space: nowrap">-6.31266</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">18</td>
+<td class="r data">374.1488</td>
+<td class="r data">0.169973</td>
+<td class="r data">4.36630</td>
+<td class="r data" style="white-space: nowrap">-0.17846</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">22</td>
+<td class="r data">373.9810</td>
+<td class="r data">0.167794</td>
+<td class="r data">4.49871</td>
+<td class="r data" style="white-space: nowrap">-0.09960</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">25</td>
+<td class="r data">373.8854</td>
+<td class="r data">0.095584</td>
+<td class="r data">7.46293</td>
+<td class="r data" style="white-space: nowrap">-0.04716</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">28</td>
+<td class="r data">373.8259</td>
+<td class="r data">0.05951</td>
+<td class="r data">3.42360</td>
+<td class="r data" style="white-space: nowrap">-0.07465</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="r data">31</td>
+<td class="r data">373.8165</td>
+<td class="r data">0.009337</td>
+<td class="r data">1.82863</td>
+<td class="r data" style="white-space: nowrap">-0.01352</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="r data">34</td>
+<td class="r data">373.8140</td>
+<td class="r data">0.00253</td>
+<td class="r data">0.58443</td>
+<td class="r data" style="white-space: nowrap">-0.00344</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="r data">37</td>
+<td class="r data">373.8138</td>
+<td class="r data">0.00023</td>
+<td class="r data">0.089837</td>
+<td class="r data" style="white-space: nowrap">-0.00046</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="r data">40</td>
+<td class="r data">373.8137</td>
+<td class="r data">0.000045</td>
+<td class="r data">0.072342</td>
+<td class="r data" style="white-space: nowrap">-0.00005</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="r data">43</td>
+<td class="r data">373.8137</td>
+<td class="r data" style="white-space: nowrap">6.878E-6</td>
+<td class="r data">0.011081</td>
+<td class="r data" style="white-space: nowrap">-0.00001</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="r data">47</td>
+<td class="r data">373.8137</td>
+<td class="r data">0.000038</td>
+<td class="r data">0.19463</td>
+<td class="r data" style="white-space: nowrap">-2.64E-6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX4" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Convergence Status">
+<caption aria-label="Convergence Status"></caption>
+<colgroup><col/></colgroup>
+<tbody>
+<tr>
+<td class="c data">NOTE: GCONV convergence criterion satisfied.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proc_note_group">
+<p class="c note"><span class="c notebanner">Note:</span><span class="c notecontent">Moore-Penrose inverse is used in covariance matrix.</span></p>
+</div>
+<div id="IDX5" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Fit Statistics">
+<caption aria-label="Fit Statistics"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Fit Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">-2 Log Likelihood</th>
+<td class="r data">747.6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">AIC (smaller is better)</th>
+<td class="r data">765.6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">AICC (smaller is better)</th>
+<td class="r data">766.0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">BIC (smaller is better)</th>
+<td class="r data">784.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX6" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Parameter Estimates">
+<caption aria-label="Parameter Estimates"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Parameter Estimates</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Parameter</th>
+<th class="r b header" scope="col">Estimate</th>
+<th class="r b header" scope="col">Standard<br/>Error</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">t&#160;Value</th>
+<th class="r b header" scope="col">Pr&#160;&gt;&#160;|t|</th>
+<th class="c b header" colspan="2" scope="colgroup">95% Confidence Limits</th>
+<th class="r b header" scope="col">Gradient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">beta0</th>
+<td class="r data" style="white-space: nowrap">-29.5718</td>
+<td class="r data">0.3448</td>
+<td class="r data">59</td>
+<td class="r data" style="white-space: nowrap">-85.76</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" style="white-space: nowrap">-30.2618</td>
+<td class="r data" style="white-space: nowrap">-28.8818</td>
+<td class="r data">0.014311</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">beta1</th>
+<td class="r data">0.04842</td>
+<td class="r data">0.01832</td>
+<td class="r data">59</td>
+<td class="r data">2.64</td>
+<td class="r data">0.0105</td>
+<td class="r data">0.01175</td>
+<td class="r data">0.08509</td>
+<td class="r data">0.19463</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma2</th>
+<td class="r data">22.9941</td>
+<td class="r data">0.8144</td>
+<td class="r data">59</td>
+<td class="r data">28.23</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">21.3645</td>
+<td class="r data">24.6237</td>
+<td class="r data">0.004619</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma3</th>
+<td class="r data">24.7889</td>
+<td class="r data">0.6551</td>
+<td class="r data">59</td>
+<td class="r data">37.84</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">23.4782</td>
+<td class="r data">26.0997</td>
+<td class="r data">0.007898</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma4</th>
+<td class="r data">23.9239</td>
+<td class="r data">0.7222</td>
+<td class="r data">59</td>
+<td class="r data">33.13</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">22.4788</td>
+<td class="r data">25.3690</td>
+<td class="r data">0.003246</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma5</th>
+<td class="r data">27.0607</td>
+<td class="r data">0.6132</td>
+<td class="r data">59</td>
+<td class="r data">44.13</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">25.8338</td>
+<td class="r data">28.2876</td>
+<td class="r data" style="white-space: nowrap">-0.00248</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma6</th>
+<td class="r data">26.6605</td>
+<td class="r data">0.6146</td>
+<td class="r data">59</td>
+<td class="r data">43.38</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">25.4307</td>
+<td class="r data">27.8904</td>
+<td class="r data">0.001025</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">alpha0</th>
+<td class="r data" style="white-space: nowrap">-11.0457</td>
+<td class="r data">18.6346</td>
+<td class="r data">59</td>
+<td class="r data" style="white-space: nowrap">-0.59</td>
+<td class="r data">0.5556</td>
+<td class="r data" style="white-space: nowrap">-48.3335</td>
+<td class="r data">26.2420</td>
+<td class="r data">0.002880</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">sigma</th>
+<td class="r data">3.9527</td>
+<td class="r data">1.4185</td>
+<td class="r data">59</td>
+<td class="r data">2.79</td>
+<td class="r data">0.0072</td>
+<td class="r data">1.1143</td>
+<td class="r data">6.7911</td>
+<td class="r data">0.005154</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX7" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Cov Matrix of Parm Estimates">
+<caption aria-label="Cov Matrix of Parm Estimates"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="10" scope="colgroup">Covariance Matrix of Parameter Estimates</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&#160;</th>
+<th class="r b header" scope="col">beta0</th>
+<th class="r b header" scope="col">beta1</th>
+<th class="r b header" scope="col">gamma2</th>
+<th class="r b header" scope="col">gamma3</th>
+<th class="r b header" scope="col">gamma4</th>
+<th class="r b header" scope="col">gamma5</th>
+<th class="r b header" scope="col">gamma6</th>
+<th class="r b header" scope="col">alpha0</th>
+<th class="r b header" scope="col">sigma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">beta0</th>
+<td class="r data">0.1189</td>
+<td class="r data" style="white-space: nowrap">-0.00149</td>
+<td class="r data">0.09818</td>
+<td class="r data">0.01456</td>
+<td class="r data">0.05569</td>
+<td class="r data" style="white-space: nowrap">-0.03461</td>
+<td class="r data" style="white-space: nowrap">-0.01493</td>
+<td class="r data">0.005385</td>
+<td class="r data" style="white-space: nowrap">-0.2619</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">beta1</th>
+<td class="r data" style="white-space: nowrap">-0.00149</td>
+<td class="r data">0.000336</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.00022</td>
+<td class="r data" style="white-space: nowrap">-3.16E-7</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma2</th>
+<td class="r data">0.09818</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data">0.6632</td>
+<td class="r data" style="white-space: nowrap">-0.1378</td>
+<td class="r data" style="white-space: nowrap">-0.1271</td>
+<td class="r data" style="white-space: nowrap">-0.1568</td>
+<td class="r data" style="white-space: nowrap">-0.1433</td>
+<td class="r data">0.004307</td>
+<td class="r data" style="white-space: nowrap">-0.3191</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma3</th>
+<td class="r data">0.01456</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.1378</td>
+<td class="r data">0.4291</td>
+<td class="r data" style="white-space: nowrap">-0.1112</td>
+<td class="r data" style="white-space: nowrap">-0.08124</td>
+<td class="r data" style="white-space: nowrap">-0.08423</td>
+<td class="r data">0.001962</td>
+<td class="r data" style="white-space: nowrap">-0.03003</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma4</th>
+<td class="r data">0.05569</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.1271</td>
+<td class="r data" style="white-space: nowrap">-0.1112</td>
+<td class="r data">0.5215</td>
+<td class="r data" style="white-space: nowrap">-0.1174</td>
+<td class="r data" style="white-space: nowrap">-0.1101</td>
+<td class="r data">0.003136</td>
+<td class="r data" style="white-space: nowrap">-0.2096</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma5</th>
+<td class="r data" style="white-space: nowrap">-0.03461</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.1568</td>
+<td class="r data" style="white-space: nowrap">-0.08124</td>
+<td class="r data" style="white-space: nowrap">-0.1174</td>
+<td class="r data">0.3760</td>
+<td class="r data" style="white-space: nowrap">-0.05511</td>
+<td class="r data" style="white-space: nowrap">-0.00300</td>
+<td class="r data">0.2060</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma6</th>
+<td class="r data" style="white-space: nowrap">-0.01493</td>
+<td class="r data" style="white-space: nowrap">-0.00030</td>
+<td class="r data" style="white-space: nowrap">-0.1433</td>
+<td class="r data" style="white-space: nowrap">-0.08423</td>
+<td class="r data" style="white-space: nowrap">-0.1101</td>
+<td class="r data" style="white-space: nowrap">-0.05511</td>
+<td class="r data">0.3778</td>
+<td class="r data" style="white-space: nowrap">-0.00109</td>
+<td class="r data">0.09089</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">alpha0</th>
+<td class="r data">0.005385</td>
+<td class="r data" style="white-space: nowrap">-0.00022</td>
+<td class="r data">0.004307</td>
+<td class="r data">0.001962</td>
+<td class="r data">0.003136</td>
+<td class="r data" style="white-space: nowrap">-0.00300</td>
+<td class="r data" style="white-space: nowrap">-0.00109</td>
+<td class="r data">347.25</td>
+<td class="r data" style="white-space: nowrap">-0.01570</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">sigma</th>
+<td class="r data" style="white-space: nowrap">-0.2619</td>
+<td class="r data" style="white-space: nowrap">-3.16E-7</td>
+<td class="r data" style="white-space: nowrap">-0.3191</td>
+<td class="r data" style="white-space: nowrap">-0.03003</td>
+<td class="r data" style="white-space: nowrap">-0.2096</td>
+<td class="r data">0.2060</td>
+<td class="r data">0.09089</td>
+<td class="r data" style="white-space: nowrap">-0.01570</td>
+<td class="r data">2.0121</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX8" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Corr Matrix of Parm Estimates">
+<caption aria-label="Corr Matrix of Parm Estimates"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="10" scope="colgroup">Correlation Matrix of Parameter Estimates</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&#160;</th>
+<th class="r b header" scope="col">beta0</th>
+<th class="r b header" scope="col">beta1</th>
+<th class="r b header" scope="col">gamma2</th>
+<th class="r b header" scope="col">gamma3</th>
+<th class="r b header" scope="col">gamma4</th>
+<th class="r b header" scope="col">gamma5</th>
+<th class="r b header" scope="col">gamma6</th>
+<th class="r b header" scope="col">alpha0</th>
+<th class="r b header" scope="col">sigma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">beta0</th>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.2357</td>
+<td class="r data">0.3496</td>
+<td class="r data">0.0645</td>
+<td class="r data">0.2236</td>
+<td class="r data" style="white-space: nowrap">-0.1637</td>
+<td class="r data" style="white-space: nowrap">-0.0704</td>
+<td class="r data">0.0008</td>
+<td class="r data" style="white-space: nowrap">-0.5354</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">beta1</th>
+<td class="r data" style="white-space: nowrap">-0.2357</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.0200</td>
+<td class="r data" style="white-space: nowrap">-0.0248</td>
+<td class="r data" style="white-space: nowrap">-0.0225</td>
+<td class="r data" style="white-space: nowrap">-0.0265</td>
+<td class="r data" style="white-space: nowrap">-0.0264</td>
+<td class="r data" style="white-space: nowrap">-0.0006</td>
+<td class="r data" style="white-space: nowrap">-0.0000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma2</th>
+<td class="r data">0.3496</td>
+<td class="r data" style="white-space: nowrap">-0.0200</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.2584</td>
+<td class="r data" style="white-space: nowrap">-0.2162</td>
+<td class="r data" style="white-space: nowrap">-0.3141</td>
+<td class="r data" style="white-space: nowrap">-0.2862</td>
+<td class="r data">0.0003</td>
+<td class="r data" style="white-space: nowrap">-0.2763</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma3</th>
+<td class="r data">0.0645</td>
+<td class="r data" style="white-space: nowrap">-0.0248</td>
+<td class="r data" style="white-space: nowrap">-0.2584</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.2352</td>
+<td class="r data" style="white-space: nowrap">-0.2023</td>
+<td class="r data" style="white-space: nowrap">-0.2092</td>
+<td class="r data">0.0002</td>
+<td class="r data" style="white-space: nowrap">-0.0323</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma4</th>
+<td class="r data">0.2236</td>
+<td class="r data" style="white-space: nowrap">-0.0225</td>
+<td class="r data" style="white-space: nowrap">-0.2162</td>
+<td class="r data" style="white-space: nowrap">-0.2352</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.2651</td>
+<td class="r data" style="white-space: nowrap">-0.2480</td>
+<td class="r data">0.0002</td>
+<td class="r data" style="white-space: nowrap">-0.2046</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma5</th>
+<td class="r data" style="white-space: nowrap">-0.1637</td>
+<td class="r data" style="white-space: nowrap">-0.0265</td>
+<td class="r data" style="white-space: nowrap">-0.3141</td>
+<td class="r data" style="white-space: nowrap">-0.2023</td>
+<td class="r data" style="white-space: nowrap">-0.2651</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.1462</td>
+<td class="r data" style="white-space: nowrap">-0.0003</td>
+<td class="r data">0.2368</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma6</th>
+<td class="r data" style="white-space: nowrap">-0.0704</td>
+<td class="r data" style="white-space: nowrap">-0.0264</td>
+<td class="r data" style="white-space: nowrap">-0.2862</td>
+<td class="r data" style="white-space: nowrap">-0.2092</td>
+<td class="r data" style="white-space: nowrap">-0.2480</td>
+<td class="r data" style="white-space: nowrap">-0.1462</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.0001</td>
+<td class="r data">0.1043</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">alpha0</th>
+<td class="r data">0.0008</td>
+<td class="r data" style="white-space: nowrap">-0.0006</td>
+<td class="r data">0.0003</td>
+<td class="r data">0.0002</td>
+<td class="r data">0.0002</td>
+<td class="r data" style="white-space: nowrap">-0.0003</td>
+<td class="r data" style="white-space: nowrap">-0.0001</td>
+<td class="r data">1.0000</td>
+<td class="r data" style="white-space: nowrap">-0.0006</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">sigma</th>
+<td class="r data" style="white-space: nowrap">-0.5354</td>
+<td class="r data" style="white-space: nowrap">-0.0000</td>
+<td class="r data" style="white-space: nowrap">-0.2763</td>
+<td class="r data" style="white-space: nowrap">-0.0323</td>
+<td class="r data" style="white-space: nowrap">-0.2046</td>
+<td class="r data">0.2368</td>
+<td class="r data">0.1043</td>
+<td class="r data" style="white-space: nowrap">-0.0006</td>
+<td class="r data">1.0000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX9" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Additional Estimates">
+<caption aria-label="Additional Estimates"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Additional Estimates</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Label</th>
+<th class="r b header" scope="col">Estimate</th>
+<th class="r b header" scope="col">Standard<br/>Error</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">t&#160;Value</th>
+<th class="r b header" scope="col">Pr&#160;&gt;&#160;|t|</th>
+<th class="r b header" scope="col">Alpha</th>
+<th class="r b header" scope="col">Lower</th>
+<th class="r b header" scope="col">Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">gamma2-gamma3</th>
+<td class="r data" style="white-space: nowrap">-1.7948</td>
+<td class="r data">1.1696</td>
+<td class="r data">59</td>
+<td class="r data" style="white-space: nowrap">-1.53</td>
+<td class="r data">0.1302</td>
+<td class="r data">0.05</td>
+<td class="r data" style="white-space: nowrap">-4.1352</td>
+<td class="r data">0.5456</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma3-gamma4</th>
+<td class="r data">0.8650</td>
+<td class="r data">1.0831</td>
+<td class="r data">59</td>
+<td class="r data">0.80</td>
+<td class="r data">0.4277</td>
+<td class="r data">0.05</td>
+<td class="r data" style="white-space: nowrap">-1.3023</td>
+<td class="r data">3.0324</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma4-gamma5</th>
+<td class="r data" style="white-space: nowrap">-3.1368</td>
+<td class="r data">1.0641</td>
+<td class="r data">59</td>
+<td class="r data" style="white-space: nowrap">-2.95</td>
+<td class="r data">0.0046</td>
+<td class="r data">0.05</td>
+<td class="r data" style="white-space: nowrap">-5.2660</td>
+<td class="r data" style="white-space: nowrap">-1.0076</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">gamma5-gamma6</th>
+<td class="r data">0.4002</td>
+<td class="r data">0.9295</td>
+<td class="r data">59</td>
+<td class="r data">0.43</td>
+<td class="r data">0.6684</td>
+<td class="r data">0.05</td>
+<td class="r data" style="white-space: nowrap">-1.4598</td>
+<td class="r data">2.2601</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
